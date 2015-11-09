@@ -25,6 +25,7 @@ i{
 }
 .weather-forecast table{
 	border-collapse: collapse;
+	width: 100%;
 }
 .weather-forecast td{
 	padding: 1rem;

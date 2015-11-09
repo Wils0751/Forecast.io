@@ -39,8 +39,7 @@ function buildWidget(cls){
 	});
 	
 };
-function currentWeather(current) {
-    //Show current weather
+function currentWeather(current) { //Show current weather
     var today = new Date();
     var currently = $(".weather-forecast");
 	$(".weather-forecast").append("<h2>");
@@ -51,10 +50,8 @@ function currentWeather(current) {
 	$("<i>").addClass("wi").addClass("wi-forecast-io-" + current.icon).addClass("current").appendTo(currently);
   }
 
-function hourlyWeather(hourly) {
-    //Show Hourly weather
+function hourlyWeather(hourly) { //Show Hourly weather
 	var today = new Date();
-	//console.log(today);
     var table = $("<table>");
 	$(".weather-forecast").append(table);
      for (var i = 0; i < hourly.data.length; i++) {
@@ -62,7 +59,6 @@ function hourlyWeather(hourly) {
         var hourlyData = hourly.data[i];
 		var time= new Date(hourlyData.time * 1000);
 			if (time.getDate()===today.getDate()){
-		//console.log(hourlyData);
 			$('tr:last').append(
             "<td>"+ time.getHours() + ":00"+"</td>",
             "<td>"+hourlyData.humidity.toString().split(".")[1] + "%</td>",
